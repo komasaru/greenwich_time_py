@@ -1,0 +1,6 @@
+old/
+.git/
+rsync_exclude.lst
+rsync_to_*.sh
+.gitignore
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require "mk_greenwich"
+
+g = MkGreenwich.new(ARGV[0])  # argument should be UT
+puts " UTC: #{g.utc.instance_eval { '%s.%03d' % [strftime('%Y-%m-%d %H:%M:%S'), (usec / 1000.0).round] }}"
+puts "  TT: #{g.tt.instance_eval { '%s.%03d' % [strftime('%Y-%m-%d %H:%M:%S'), (usec / 1000.0).round] }}"
+puts " UT1: #{g.ut1.instance_eval { '%s.%03d' % [strftime('%Y-%m-%d %H:%M:%S'), (usec / 1000.0).round] }}"
+puts " TDB: #{g.tdb.instance_eval { '%s.%03d' % [strftime('%Y-%m-%d %H:%M:%S'), (usec / 1000.0).round] }}"
+puts " ERA: #{g.era}"
+puts "  EO: #{g.eo}"
+puts "GAST: #{g.gast} rad"
+puts "    = #{g.gast_deg} °"
+puts "    = #{g.gast_hms}"
+puts "GMST: #{g.gmst} rad"
+puts "    = #{g.gmst_deg} °"
+puts "    = #{g.gmst_hms}"
+puts "  EE: #{g.ee} rad"
+puts "    = #{g.ee_deg} °"
+puts "    = #{g.ee_hms}"
+

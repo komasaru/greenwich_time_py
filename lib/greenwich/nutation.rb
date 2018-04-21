@@ -28,8 +28,8 @@ module Greenwich
       d_psi_pl, d_eps_pl = calc_planetary(@t)
       d_psi, d_eps = d_psi_ls + d_psi_pl, d_eps_ls + d_eps_pl
       # Apply P03 adjustments (Wallace & Capitaine, 2006, Eqs.5).
-      d_psi += d_psi * (0.4697e-6 + fj2);
-      d_eps += d_eps * fj2;
+      d_psi += d_psi * (0.4697e-6 + fj2)
+      d_eps += d_eps * fj2
       return [d_psi, d_eps]
     rescue => e
       raise
