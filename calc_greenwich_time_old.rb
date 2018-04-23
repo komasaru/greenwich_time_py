@@ -35,12 +35,8 @@ class CalcGreenwichTime
     begin
       # Time calculation
       jd     = calc_jd(@tt)
-      p jd
-      exit
       jc     = calc_jc(jd)
       dt     = calc_dt(@tt)
-      p dt
-      exit
       ut1    = tt2ut1(@tt, dt)
       jd_ut1 = calc_jd(ut1)
       puts @tt.strftime("     TT = %Y-%m-%d %H:%M:%S.%L")
