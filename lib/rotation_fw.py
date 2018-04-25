@@ -2,7 +2,6 @@
 Class for Rotation given the Fukushima-Williams angles
 """
 from lib import matrix as mx
-import sys
 
 
 class RotationFw:

@@ -10,7 +10,6 @@ import math
 import numpy as np
 from lib import angle as ang
 from lib import const as cst
-import sys
 
 
 class Greenwich:
