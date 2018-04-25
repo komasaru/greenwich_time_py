@@ -1,5 +1,5 @@
-CalcGreenwichTime
-=================
+GreenwichTime
+=============
 
 ## Introduction
 
@@ -11,10 +11,10 @@ CalcGreenwichTime calculates Greenwich Time.
 
 ## Usage
 
-`./calc_greenwich_time.rb [YYYYMMDD[HHMMSS]]`
+`./greenwich_time.py [YYYYMMDD[HHMMSS]]`
 
-If you specify a argument, `calc_greenwich_time.rb` regards system's date-time as TT(Terrestrial Time).
+If you don't specify a argument, `calc_greenwich_time.rb` regards system's date-time as TT(Terrestrial Time).
 
-And, `calc_greenwich_time.rb` also outputs progresses.
+And, `greenwich_time.py` also outputs progresses.
 
 
