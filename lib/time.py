@@ -50,7 +50,7 @@ def calc_dt(tt):
         ym = "{:04d}-{:02d}".format(year, month)
         y = year + (month - 0.5) / 12
         if year < -500:
-            t = (y - 1820) // 100
+            t = (y - 1820) / 100
             dt  = -20 + 32 * t ** 2
         elif -500 <= year and year < 500:
             t = y / 100
