@@ -101,14 +101,12 @@ class GreenwichTime:
             if len(sys.argv) < 2:
                 self.tt = datetime.now()
                 return
-            if re.search(r"^\d{8}$", sys.argv[1]) is not(None):
-                dt = sys.argv[1] + "000000"
-            elif re.search(r"^\d{14}$", sys.argv[1]) is not(None):
-                dt = sys.argv[1]
+            if re.search(r"^(\d{8}|\d{14}|\d{20})$", sys.argv[1]) is not(None):
+                dt = sys.argv[1].ljust(20, "0")
             else:
                 sys.exit(0)
             try:
-                self.tt = datetime.strptime(dt, "%Y%m%d%H%M%S")
+                self.tt = datetime.strptime(dt, "%Y%m%d%H%M%S%f")
             except ValueError as e:
                 print("Invalid date!")
                 sys.exit(0)
@@ -119,8 +117,8 @@ class GreenwichTime:
         """ Display """
         try:
             print((
-                "     TT = {}.{:06d}\n"
-                "    UT1 = {}.{:06d}\n"
+                "     TT = {}\n"
+                "    UT1 = {}\n"
                 " JD(TT) = {}\n"
                 "JD(UT1) = {}\n"
                 "     JC = {}\n"
@@ -147,10 +145,8 @@ class GreenwichTime:
                 "        = {} °\n"
                 "        = {}"
             ).format(
-                self.tt.strftime("%Y-%m-%d %H:%M:%S"),
-                self.tt.microsecond,
-                self.ut1.strftime("%Y-%m-%d %H:%M:%S"),
-                self.ut1.microsecond,
+                self.tt.strftime("%Y-%m-%d %H:%M:%S.%f"),
+                self.ut1.strftime("%Y-%m-%d %H:%M:%S.%f"),
                 self.jd,
                 self.jd_ut1,
                 self.jc,
