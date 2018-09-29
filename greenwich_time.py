@@ -1,4 +1,4 @@
-#! /usr/local/bin/python3.6
+#! /usr/local/bin/python3
 """
 グリニジ視恒星時 GAST(= Greenwich Apparent Sidereal Time)等の計算
 : IAU2006 による計算
