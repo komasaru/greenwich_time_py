@@ -4,7 +4,7 @@ Class for Precessions
 from lib import const as cst
 
 
-class Precision:
+class Precession:
     def __init__(self, t):
         """ Initialization
 

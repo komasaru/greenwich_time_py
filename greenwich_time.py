@@ -31,7 +31,7 @@ from lib import cip_cio     as lcc
 from lib import const       as lcst
 from lib import greenwich   as lgw
 from lib import nutation    as lnt
-from lib import precision   as lpr
+from lib import precession  as lpr
 from lib import rotation_fw as lfw
 from lib import time        as ltm
 
@@ -50,7 +50,7 @@ class GreenwichTime:
             self.jd_ut1 = ltm.calc_jd(self.ut1)
             # === Fukushima-Williams angles for frame bias and precession.
             #       Ref: iauPfw06(date1, date2, &gamb, &phib, &psib, &epsa)
-            prec = lpr.Precision(self.jc)
+            prec = lpr.Precession(self.jc)
             self.gam_b, self.phi_b, self.psi_b = prec.calc_pfw_06()
             self.eps_a = prec.calc_obl_06()
             # === Nutation components.
